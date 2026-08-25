@@ -16,11 +16,21 @@ A production-grade clearinghouse for multilateral netting of agent-to-agent micr
 
 ## Stack
 
-- **Contracts** — Solidity (Hardhat, OpenZeppelin)
-- **Backend** — TypeScript/Node.js, Express, ethers.js
-- **Netting engine** — TypeScript (11 unit tests)
-- **SDK** — EIP-712 signing for agents
-- **Dashboard** — Vanilla HTML/CSS/JS (5 tabs: Overview, Agents, Batch History, Architecture, Security)
+| Component | Language | Framework |
+|-----------|----------|-----------|
+| Smart Contracts | **Solidity** | Hardhat, OpenZeppelin |
+| Backend API | **TypeScript** | Node.js, Express.js, ethers.js |
+| Netting Engine | **TypeScript** | Custom algorithms (greedy heap + DFS) |
+| Agent SDK | **TypeScript** | EIP-712 signing utilities |
+| Dashboard | **HTML/CSS/JavaScript** | Vanilla (no framework) |
+| Tests | **TypeScript** | Hardhat, Jest |
+| Config | **TypeScript/JSON** | Hardhat, tsconfig |
+
+**Languages & Statistics:**
+- **Solidity**: 4 smart contracts (~1,200 LOC)
+- **TypeScript**: Backend, SDK, netting engine, tests (~8,000 LOC)
+- **HTML/CSS/JavaScript**: Real-time dashboard (~2,000 LOC)
+- **Shell/JavaScript**: Deployment and build scripts
 
 ## Quick Start
 
