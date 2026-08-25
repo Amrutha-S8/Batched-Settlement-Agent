@@ -1,0 +1,42 @@
+{
+  "name": "batched-settlement-agent",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "scripts": {
+    "compile": "node scripts/compile.js",
+    "test": "npm run test:contracts && npm run test:netting && npm run test:sdk",
+    "test:contracts": "npx hardhat test --no-compile",
+    "test:netting": "npx mocha --require ts-node/register netting-engine/test/**/*.test.ts",
+    "test:sdk": "npx mocha --require ts-node/register sdk/test/setup.ts sdk/test/*.test.ts",
+    "node": "npx hardhat node",
+    "deploy:local": "npx hardhat run scripts/deploy.ts --network localhost --no-compile",
+    "backend": "npx ts-node backend/src/server.ts",
+    "demo": "npx hardhat run scripts/demo.ts --no-compile"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.2.0",
+    "@types/node-fetch": "^2.6.13",
+    "hardhat": "^2.29.1",
+    "node-fetch": "^2.7.0",
+    "solc": "^0.8.24",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.6.1",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1"
+  }
+}
